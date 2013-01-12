@@ -1,4 +1,4 @@
-Minecraft Infinichest
-==================================
+Minecraft-infinichest
+=====================
 
-Bukkit plugin that allows chests and dispensers to hold infinite inventory
+Minecraft mod that allows dispensers to have infinite inventory
