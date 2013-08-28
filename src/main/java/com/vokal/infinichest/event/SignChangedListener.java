@@ -19,17 +19,17 @@ public class SignChangedListener implements Listener {
 
     @EventHandler
     public void onSignChanged(SignChangeEvent aEvent) {
-        // Check user authorization
-        if (!aEvent.getPlayer().hasPermission("infinichest.moderator")) {
-            aEvent.getPlayer().sendMessage(ChatColor.RED + "Not authorized to use InfiniChest");
-            return;
-        }
-
         String[] lines = aEvent.getLines();
 
         // Verify the sign is for an InfiniChest
         if (!lines[0].equals("[InfiniChest]")) {
             mPlugin.getLogger().info("Authorized user didn't place an InfiniChest sign");
+            return;
+        }
+
+        // Check user authorization
+        if (!aEvent.getPlayer().hasPermission("infinichest.moderator")) {
+            aEvent.getPlayer().sendMessage(ChatColor.RED + "Not authorized to use InfiniChest");
             return;
         }
 
